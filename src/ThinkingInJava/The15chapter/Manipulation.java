@@ -2,7 +2,7 @@ package ThinkingInJava.The15chapter;
 
 class HasF {
     public void f1() {
-        System.out.println("Has.f1()");
+        System.out.println("Has.f2()");
     }
 }
 class Manipulator<T extends HasF> {
