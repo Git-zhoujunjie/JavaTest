@@ -1,8 +1,8 @@
 package ThinkingInJava.The15chapter;
 
 class HasF {
-    public void f() {
-        System.out.println("Has.f()");
+    public void f1() {
+        System.out.println("Has.f1()");
     }
 }
 class Manipulator<T extends HasF> {
@@ -10,7 +10,7 @@ class Manipulator<T extends HasF> {
     public Manipulator(T x){
         obj = x;
     }
-    public void manipulate(){ obj.f(); }
+    public void manipulate(){ obj.f1(); }
 }
 public class Manipulation {
     public static void main(String[] args){
