@@ -8,7 +8,7 @@ public class IceCream {
     static final String[] FLAVORS = {
             "Chocalate","Strawberry","Vanilla","Mini Chip",
             "Mocha Almod", "Rum Raisin","Praline Cream",
-            "Mub Pie"
+            "Mub Pie "
     };
     public static String[] flavorSet(int n){
         if(n >FLAVORS.length)
