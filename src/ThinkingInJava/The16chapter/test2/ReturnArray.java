@@ -5,7 +5,7 @@ import java.util.Arrays;
 class BerylliumSphere {
     private static long count ;
     private final long id = count++;
-    public String toString() { return "Sphere:" + id ;}
+    public String toString() { return "Sphere: " + id ;}
 }
 
 public class ReturnArray {
