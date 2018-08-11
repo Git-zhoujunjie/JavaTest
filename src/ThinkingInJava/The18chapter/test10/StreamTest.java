@@ -12,6 +12,7 @@ public class StreamTest {
                 new FileReader(filename));
         List<String> list = new ArrayList<>();
         String st;
+        ArrayList a = new ArrayList();
         while((st = io.readLine())!=null)
             list.add(st.toUpperCase());
         return list;
