@@ -1,4 +1,4 @@
-package DataStructureAndAlgorithmAnalysis.chapter1;
+package DataStructureAndAlgorithmAnalysis.chapter2;
 
 public class BinarySearch {
     public static int binarySearch(int[] a, int x) {

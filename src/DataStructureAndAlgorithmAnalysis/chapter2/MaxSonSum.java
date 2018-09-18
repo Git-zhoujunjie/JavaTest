@@ -1,4 +1,4 @@
-package DataStructureAndAlgorithmAnalysis.chapter1;
+package DataStructureAndAlgorithmAnalysis.chapter2;
 
 public class MaxSonSum {
     public static int funmax1(int[] a) {
