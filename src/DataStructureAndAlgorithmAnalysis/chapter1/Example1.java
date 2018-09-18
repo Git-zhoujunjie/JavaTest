@@ -16,6 +16,7 @@ public class Example1 {
             if(cmp.compare(arr[i],arr[maxIndex]) > 0)
                 maxIndex = i;
         }
+
         return arr[maxIndex];
     }
 
