@@ -1,4 +1,4 @@
-package DataStructureAndAlgorithmAnalysis.chapter2;
+package DataStructureAndAlgorithmAnalysis.chapter3;
 
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
