@@ -53,7 +53,7 @@ public class 背包问题 {
             theInfos.add(new theInfo(Double.parseDouble(strings[0]), Double.parseDouble(strings[1])));
 //            scanner.close();
         }
-
+        buffer.close();
         Collections.sort(theInfos);//降序排序
 
         double sum = 0;//总价值
