@@ -3,6 +3,7 @@ package LearningAlgorithmInterestingly.chapter2;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.PriorityQueue;
 
 /*采用Prim算法
  1、无向图采用邻接矩阵表示，用二维数组m[][]存储
@@ -23,12 +24,25 @@ import java.io.InputStreamReader;
 5 7 16
 6 7 25
  */
+
+class Node1{
+    int flag;
+    int value;
+
+    public Node1(int f,int v){
+        this.flag = f;
+        this.value = v;
+    }
+}
+
 public class 最小生成树 {
     private static final int MAXN = 100;
     int[][] m = new int[MAXN][MAXN];
     boolean[] s = new boolean[MAXN];
     int[] lowcost = new int[MAXN];
     int[] clostest = new int[MAXN];
+
+
 
     void input(int countv, int countl) throws IOException {
         BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
@@ -79,6 +93,21 @@ public class 最小生成树 {
             s[flag] = true; //将V-U中离U最小值的节点加入U
             t = flag;
         }
+
+//        PriorityQueue<Node1> queue = new PriorityQueue<>(); //用于对lowcost数组排序，每次取队列最小值
+//        queue.add(new Node1(n,0)); //现将初始节点加入队列
+//        while( countv-- >0 ){
+//            Node1 p = queue.poll();
+//            s[p.flag] = true;   //每次更新一个节点
+//
+//            for(int j = 1;j<=countv ;j++){   //用来更新lowest和closest
+//                if(!s[j] && lowcost[j] > m[p.flag][j]){ //!s[i]==true表示节点i属于集合V-U
+//                    lowcost[j] = m[p.flag][j];
+//                    clostest[j] = p.flag;
+//                    queue.add(new Node1(j,lowcost[j]));
+//                }
+//            }
+//        }
     }
 
     public static void main(String[] args) throws IOException{
