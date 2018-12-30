@@ -1,6 +1,5 @@
 package LearningAlgorithmInterestingly.chapter4;
 
-import javax.imageio.IIOException;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -43,6 +42,21 @@ public class 最长公共子序列 {
             }
         }
     }
+    int[] arr = new int[MAXN];
+    void LCS2(){
+        int topleft,nexttopleft;
+        for(int i = 0;i<=str2.length();i++) arr[i] = 0;
+        for(int i = 1;i<=str1.length();i++){
+            topleft = arr[i-1];
+            for(int j =1;j<=str2.length();j++){
+                nexttopleft = arr[j];
+                if(str1.charAt(i-1) == str2.charAt(j-1)) arr[j] = topleft + 1;
+                else arr[j] = Math.max(arr[j-1],arr[j]);
+
+                topleft = nexttopleft;
+            }
+        }
+    }
 
     void print(int i,int j) {
         if (i == 0 || j == 0) return;
@@ -69,6 +83,9 @@ public class 最长公共子序列 {
         test.LCS();
         System.out.println("最长公共子序列长度为："+ test.c[test.len1][test.len2]);
         test.print(test.len1,test.len2);
+        System.out.println();
+        test.LCS2();
+        System.out.println("最长公共子序列长度为："+ test.arr[str2.length()]);
 
     }
 }
