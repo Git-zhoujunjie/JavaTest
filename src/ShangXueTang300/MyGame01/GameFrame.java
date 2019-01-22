@@ -9,7 +9,7 @@ import java.awt.event.WindowEvent;
  */
 public class GameFrame extends Frame {
 
-    Image i1 = GameUtil.getImage("Images/bg.jpg");
+    Image i1 = GameUtil.getImage("images/bg.jpg");
     Image i2 = GameUtil.getImage("Images/astarte.png");
 
     public void launchFrame(){

@@ -1,9 +1,11 @@
 package CommonTest.TestFileTree;
 
 import java.io.File;
+import java.util.ArrayList;
 
 public class Test {
     public static void main(String[] args){
+        ArrayList a = new ArrayList();
         String path = "D:\\学习资料\\三个月入门深度学习课件-胡晓曼.pdf";
         File f = new File(path);
 
