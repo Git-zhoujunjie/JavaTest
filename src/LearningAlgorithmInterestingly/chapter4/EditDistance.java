@@ -37,11 +37,15 @@ public class EditDistance {
         }
         for(int i = 1;i<=s1.length();i++){
             for(int j = 1;j<=s2.length();j++){
-                if(s1.charAt(i-1) == s2.charAt(j-1)) d[i][j] = d[i-1][j-1];
-                else{
-                    d[i][j] = Math.min(d[i-1][j-1]+1,
-                            Math.min(d[i][j-1]+1,d[i-1][j]+1));
-                }
+                int diff = 0;
+                if(s1.charAt(i-1) == s2.charAt(j-1)) diff = 0;
+                else diff = 1;
+                d[i][j] = Math.min(Math.min(d[i][j-1]+1,d[i-1][j]+1),d[i-1][j-1]+diff);
+//                if(s1.charAt(i-1) == s2.charAt(j-1)) d[i][j] = d[i-1][j-1];
+//                else{
+//                    d[i][j] = Math.min(d[i-1][j-1]+1,
+//                            Math.min(d[i][j-1]+1,d[i-1][j]+1));
+//                }
             }
         }
     }
@@ -94,15 +98,15 @@ public class EditDistance {
             //看它来自哪个方向
             if(d[i-1][j-1]+1 == d[i][j]) {
                 process(s1, i - 1, s2, j - 1);
-                System.out.println("将s1的第"+i+"位 " + s1.charAt(i-1) + " 替换为 " + s2.charAt(j-1));
+                System.out.println("将s1的" + s1.charAt(i-1) + " 替换为 " + s2.charAt(j-1));
             }
             else if(d[i-1][j]+1 == d[i][j]) {  //来自上方，说明需要删除
                 process(s1,i-1,s2,j);
-                System.out.println("将s1的第"+i+"位 " +s1.charAt(i-1)+"删除");
+                System.out.println("将s1的" +s1.charAt(i-1)+"删除");
             }
             else if(d[i][j-1]+1 == d[i][j]) {  //来自左方，说明需要插入
                 process(s1,i,s2,j-1);
-                System.out.println("在s1的第"+i+"位 " +"插入"+s2.charAt(j-1));
+                System.out.println("在s1的"+"插入"+s2.charAt(j-1));
             }
         }
     }

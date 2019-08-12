@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 class BigNum{  //
-    //ArrayList<Integer> s = new ArrayList<>();   //存储大数，倒序存储
+    //arrayListCon<Integer> s = new arrayListCon<>();   //存储大数，倒序存储
     int[] s = new int[100];
     int l;  //数组的长度
     int c;    //当前数的阶数

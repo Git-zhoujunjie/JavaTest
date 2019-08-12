@@ -12,16 +12,16 @@ import java.util.Scanner;
  * 解题方法分析：
  * 采用回溯法，即深度优先遍历
  * 1、定义解空间：题目的题为商品集合的一个子集；显约束条件为：x[i]=0或1
- * 2、确定解的组织形式：可看作为一颗解空间树
+ * 2、确定解的组织形式：可看作为一棵满二叉树
  * 3、搜索解空间：深度优先遍历，隐约束条件为：解集中w的和小于W，限界条件为v最大
  *
  */
 public class 大卖场购物车问题2 {
-    private int n;
-    private double WEIGHT;
+    private int n = 4;
+    private double WEIGHT = 10;
     private int[] x = new int[n+10];  //每件商品的状态，x[i]=1，表示第i件商品放入购物车
-    private int[] w = new int[n+10];  //每件商品的重量
-    private int[] v = new int[n+10];  //每件商品的价值
+    private int[] w = {0,2,4,5,2,0,0,0,0,0};  //每件商品的重量
+    private int[] v = {0,6,5,3,4,0,0,0,0,0};  //每件商品的价值
     private int[] result = new int[n+10];  //记录最优解的状态
 
     private int weight=0;  //当前购物车中的总重量，初始为0
@@ -66,7 +66,39 @@ public class 大卖场购物车问题2 {
         if(bound(i)>bestV){
             x[i] = 0;
             Backtrack(i+1);
+            boolean a = false;
         }
+    }
+
+    public void Backtrack2(int i) {
+        if (i > n) {  //已经遍历到最后一层，找出最优解
+            if (value > bestV) {  //限界条件用来更新最优解
+                for (int j = 1; j <= n; j++) {
+                    result[j] = x[j];
+                }
+                bestV = value;
+            }
+            return;
+        }
+        if (weight + w[i] <= WEIGHT) { //第i层还未找到最优解
+            x[i] = 1;
+            weight += w[i];
+            value += v[i];
+            Backtrack2(i + 1);
+
+            weight -= w[i];  //回溯时原路返回
+            value -= v[i];
+        }
+
+        //这样做相当于必须搜索整颗解空间树，没有利用限界条件来减少搜索范围
+        x[i] = 0;
+        Backtrack2(i + 1);
+
+
+//        if(bound(i)>bestV){
+//            x[i] = 0;
+//            Backtrack(i+1);
+//        }
     }
 
     /**
@@ -81,6 +113,13 @@ public class 大卖场购物车问题2 {
             this.w[i+1] = w[i];
             this.v[i+1] = v[i];
         }
+
+//        this.n = 4;
+//        this.WEIGHT = 10;
+//        int[] a = {0,2,5,4,2,0,0,0,0,0};
+//        this.w = a;
+//        int[] b = {0,6,3,5,4,0,0,0,0,0};
+//        this.v = b;
     }
 
     public static void main(String[] args) {
@@ -88,27 +127,28 @@ public class 大卖场购物车问题2 {
         Scanner in = new Scanner(System.in);
 
         //while(in.hasNext()){
-        System.out.print("请输入物品数量：");
-        int n = in.nextInt();
-        System.out.print("请输入购物车重量限制：");
-        double WEIGHT = in.nextDouble();
+//        System.out.print("请输入物品数量：");
+//        int n = in.nextInt();
+//        System.out.print("请输入购物车重量限制：");
+//        double WEIGHT = in.nextDouble();
+//
+//        int[] w = new int[n];
+//        System.out.println("请输入每件商品的重量，以空格隔开：");
+//        for(int i=0;i<n;i++){
+//            String wStr = in.next();
+//            w[i] = Integer.parseInt(wStr);
+//        }
+//
+//        int[] v = new int[n];
+//        System.out.println("请输入每件商品的价值，以空格隔开：");
+//        for(int i=0;i<n;i++){
+//            String vStr = in.next();
+//            v[i] = Integer.parseInt(vStr);
+//            //vStr.replace("","");
+//        }
 
-        int[] w = new int[n];
-        System.out.println("请输入每件商品的重量，以空格隔开：");
-        for(int i=0;i<n;i++){
-            String wStr = in.next();
-            w[i] = Integer.parseInt(wStr);
-        }
-
-        int[] v = new int[n];
-        System.out.println("请输入每件商品的价值，以空格隔开：");
-        for(int i=0;i<n;i++){
-            String vStr = in.next();
-            v[i] = Integer.parseInt(vStr);
-            //vStr.replace("","");
-        }
-
-        test.inputAndInit(n, WEIGHT, w, v);
+        //test.inputAndInit(n, WEIGHT, w, v);
+        //test.Backtrack(1);  //从第一层开始
         test.Backtrack(1);  //从第一层开始
 
         //打印结果result
@@ -118,3 +158,13 @@ public class 大卖场购物车问题2 {
         // }
     }
 }
+/*
+请输入物品数量：4
+请输入购物车重量限制：10
+请输入每件商品的重量，以空格隔开：
+2 5 4 2
+请输入每件商品的价值，以空格隔开：
+6 3 5 4
+[0, 1, 0, 1, 1, 0, 0, 0, 0, 0]
+最大价值为：15.0
+ */

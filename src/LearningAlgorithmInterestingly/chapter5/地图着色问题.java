@@ -40,29 +40,29 @@ public class 地图着色问题 {
         return ok;
     }
 
-    void BackTrack(int t){
-        if(t>n){  //找到结果，输出result
+    void BackTrack(int t) {
+        if (t > n) {  //找到结果，输出result
 //            for(int i=1;i<=n;i++){
 //                //result[i] = v[i];
 //
 //            }
             //输出结果
-            System.out.print("第"+count+"种方案为：");
+            System.out.print("第" + count + "种方案为：");
             StringBuilder sb = new StringBuilder();
             sb.append("[");
-            for(int i=1;i<=n;i++){
-                sb.append(v[i]+",");
+            for (int i = 1; i <= n; i++) {
+                sb.append(v[i] + ",");
             }
-            sb.setCharAt(sb.length()-1,']');
+            sb.setCharAt(sb.length() - 1, ']');
             System.out.println(sb.toString());
             count++;
             return;
         }
         //确定t号节点的颜色
-        for(int c=1;c<=m;c++){
-            if(check(t,c)){
+        for (int c = 1; c <= m; c++) {
+            if (check(t, c)) {
                 v[t] = c;
-                BackTrack(t+1);
+                BackTrack(t + 1);
             }
         }
     }

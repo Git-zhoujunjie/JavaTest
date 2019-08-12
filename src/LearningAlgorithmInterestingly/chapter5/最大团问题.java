@@ -31,7 +31,7 @@ public class 最大团问题 {
 //        return true;
         boolean ok = true;
         for(int j=1;j<t;j++){
-            if(v[j]!=0&&ele[t][j]==0){
+            if(v[j]==1&&ele[t][j]==0){
                 ok = false;
                 break;
             }

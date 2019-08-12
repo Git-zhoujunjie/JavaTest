@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js-操作文档结构</title>
+
+    <script type="text/javascript">
+        function testAdd() {
+            var div = document.getElementById("showdiv");
+            div.innerHTML = div.innerHTML + "<div>\n" +
+                "        <input type=\"file\"/> <input type=\"button\" value=\"删除\" onclick=\"deletea(this)\">\n" +
+                "    </div>";
+        }
+
+        function deletea(btn) {
+            <!--获取总div对象-->
+            var showdiv=document.getElementById("showdiv");
+            <!--获取当前按钮的父节点对象，即按钮对应的div对象-->
+            var pdiv = btn.parentNode;
+            <!--由于子div是总div的子节点对象，因此可以这样删除-->
+            showdiv.removeChild(pdiv);
+        }
+    </script>
+</head>
+<body>
+    <h3>js-操作文档结构</h3>
+    <input type="button" value="添加" onclick="testAdd()">
+    <hr/>
+
+
+    <div id="showdiv">
+
+    </div>
+</body>
+</html>

@@ -14,7 +14,7 @@ package LearningAlgorithmInterestingly.chapter5;
  * --3.搜索过程：深度优先
  *
  */
-public class 八皇后问题 {
+public class n皇后问题 {
     int n;
     int[] coord ;  //皇后的坐标
     static int count = 0;
@@ -52,13 +52,13 @@ public class 八皇后问题 {
     }
 
     void init(){
-        n = 10;
+        n = 8;
         coord = new int[n+10];
         //for(int i=1;i<)
     }
 
     public static void main(String[] args) {
-        八皇后问题 test = new 八皇后问题();
+        n皇后问题 test = new n皇后问题();
 
         test.init();
         test.BackTrack(1);

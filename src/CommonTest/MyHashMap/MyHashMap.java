@@ -1,5 +1,7 @@
 package CommonTest.MyHashMap;
 
+import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -139,5 +141,7 @@ public class MyHashMap<K,V> {
         System.out.println(test);
         System.out.println(test.size());
 
+        HashMap map=new HashMap();
+        Hashtable table =new Hashtable();
     }
 }

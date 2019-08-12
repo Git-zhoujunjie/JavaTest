@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>360模拟</title>
+    </head>
+    <body>
+        <h3>360一下</h3>
+        <!--采用form表单的形式-->
+        <form action="https://www.so.com/s" method="get" target="_blank">
+            <input type="text" name="q" />
+            <input type="submit" value="360搜索"><br/>
+        </form>
+
+        <hr/><br/>
+        <!--注册页面-->
+        <form action="" method="get">
+            <table border="1" cellpadding="10">
+                <tr height="50">
+                    <td>用户名</td>
+                    <td>
+                        <input type="text" name="uname">
+                    </td>
+                </tr>
+                <tr>
+                    <td>密码</td>
+                    <td>
+                        <input type="password" name="pwd">
+                    </td>
+                </tr>
+                <tr>
+                    <td>性别</td>
+                    <td>
+                        男<input type="radio" name="sex" value="1" checked="checked">
+                        女<input type="radio" name="sex" value="0">
+                    </td>
+                </tr>
+                <tr>
+                    <td>爱好</td>
+                    <td>
+                        打球<input type="checkbox" name="fav" value="0">
+                        听歌<input type="checkbox" name="fav" value="1">
+                        玩游戏<input type="checkbox" name="fav" value="2">
+                        看动漫<input type="checkbox" name="fav" value="3">
+                    </td>
+                </tr>
+                <tr>
+                    <td>籍贯</td>
+                    <td>
+                        <select name="address">
+                            <option value="">---请选择---</option>
+                            <option value="1">北京</option>
+                            <option value="2">上海</option>
+                            <option value="3">深圳</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>个人描述</td>
+                    <td>
+                        <textarea name="disc" rows="10" cols="10"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="justify">
+                        是否同意条款<input type="checkbox" name="agree" value="1">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" value="注册">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

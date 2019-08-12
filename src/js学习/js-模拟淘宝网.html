@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>js-模拟淘宝网</title>
+
+        <!--声明js代码域-->
+        <script type="text/javascript">
+            //鼠标移动到小图上，大图跟着变
+            function mouseon(img) {
+                //小图加边框
+                img.style.border="solid 1px";
+                var big = document.getElementById("big");
+                big.src=img.alt;
+            }
+
+            function mouseover(img) {
+                //去掉边框
+                img.style.border="";
+            }
+        </script>
+
+        <!--声明css代码域-->
+        <style type="text/css">
+            #showdiv{
+                width: 400px;
+                height: 500px;
+                border: solid 1px;
+                border-radius: 20px;
+            }
+            table{
+                margin: auto;
+                margin-top: 15px;
+            }
+            td{
+                text-align: center;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div id="showdiv">
+            <table width="349px">
+                <tr height="350px" >
+                    <td colspan="5"><img src="img/show1_big.jpg" height="262" width="349" id="big"/></td>
+                </tr>
+                <tr height="100px">
+                    <td><img src="img/show1.jpg" alt="img/show1_big.jpg" onmouseover="mouseon(this)" onmouseout="mouseover(this)"></td>
+                    <td><img src="img/show2.jpg" alt="img/show2_big.jpg" onmouseover="mouseon(this)" onmouseout="mouseover(this)"></td>
+                    <td><img src="img/show3.jpg" alt="img/show3_big.jpg" onmouseover="mouseon(this)" onmouseout="mouseover(this)"></td>
+                    <td><img src="img/show4.jpg" alt="img/show4_big.jpg" onmouseover="mouseon(this)" onmouseout="mouseover(this)"></td>
+                    <td><img src="img/show5.jpg" alt="img/show5_big.jpg" onmouseover="mouseon(this)" onmouseout="mouseover(this)"></td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

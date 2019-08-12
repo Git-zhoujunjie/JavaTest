@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js-操作文档结构2</title>
+
+    <script type="text/javascript">
+        function testOpe() {
+            var div = document.getElementById("showdiv");
+
+            var tag = document.createElement("input");
+            tag.type="file";
+
+            var br = document.createElement("br");
+
+            var btn = document.createElement("input");
+            btn.type="button";
+            btn.value="删除";
+
+            btn.onclick = function(){
+                div.removeChild(tag);
+                div.removeChild(btn);
+                div.removeChild(br);
+            }
+
+            div.appendChild(tag);
+            div.appendChild(btn);
+            div.appendChild(br);
+
+        }
+    </script>
+</head>
+<body>
+    <h3>js-操作文档结构2</h3>
+    <input type="button" value="添加" onclick="testOpe()">
+    <hr/>
+    <div id="showdiv"></div>
+</body>
+</html>

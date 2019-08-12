@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>操作HTML的元素属性</title>
+    <script type="text/javascript">
+        function testField() {
+            var inp=document.getElementById("uname");
+            alert(inp.type+":"+inp.name+":"+inp.id+":"+inp.value);
+        }
+        //修改元素属性值
+        function testField2(){
+            //获取元素对象
+            var inp=document.getElementById("uname");
+            //修改元素属性
+            inp.value="哈哈";
+            inp.type="button";
+        }
+    </script>
+
+</head>
+<body>
+    <h3>js操作HTML的元素属性</h3>
+    <hr />
+    <input type="button" name="" id="" value="获取元素--固有" onclick="testField()"><br/>
+    <input type="button" name="" id="" value="测试修改元素属性--固有" onclick="testField2()" /><br>
+    用户名：<input type="text" id="uname" name="uname">
+</body>
+</html>
