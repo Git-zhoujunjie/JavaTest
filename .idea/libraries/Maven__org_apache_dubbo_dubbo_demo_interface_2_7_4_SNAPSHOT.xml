@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.apache.dubbo:dubbo-demo-interface:2.7.4-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://E:/Java_Projects/dubbo-master/dubbo-demo/dubbo-demo-interface/pom.xml!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://E:/Java_Projects/dubbo-master/dubbo-demo/dubbo-demo-interface/dubbo-demo-interface-2.7.4-SNAPSHOT-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://E:/Java_Projects/dubbo-master/dubbo-demo/dubbo-demo-interface/dubbo-demo-interface-2.7.4-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
