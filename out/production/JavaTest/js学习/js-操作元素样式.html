@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js-操作元素样式</title>
+
+
+
+    <!--声明js代码域-->
+    <script type="text/javascript">
+
+        function doStyle() {
+            <!--获取div对象-->
+            var div = document.getElementById("showdiv");
+            div.style.backgroundColor="blue";
+            div.style.border="solid orange 5px";
+        }
+
+        function doClass() {
+            var dc=document.getElementById("showdiv2");
+            //alert(dc.className);
+            dc.className="common2";
+        }
+    </script>
+
+    <!--声明css代码域-->
+    <style type="text/css">
+        #showdiv{
+
+
+        }
+
+        .common{
+            width: 100px;
+            height: 100px;
+            border: solid 1px;
+            margin-bottom: 20px;
+        }
+
+        .common2{
+            width: 100px;
+            height: 100px;
+            border: solid 1px;
+            margin-bottom: 20px;
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h3>js-操作元素样式</h3>
+    <input type="button" value="修改div样式" onclick="doStyle()">
+    <input type="button" value="修改class样式" onclick="doClass()">
+    <hr />
+    <div id="showdiv" class="common">
+
+    </div>
+    <div id="showdiv2" class="common">
+
+    </div>
+</body>
+</html>

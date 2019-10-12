@@ -1,5 +1,5 @@
 package Leetcode.Huawei;//import java.util.Scanner;
-//public class Leetcode.Huawei.Main{
+//public class Leetcode.Huawei.Main2{
 //    public static void main(String[] args){
 //        Scanner sc = new Scanner(System.in);
 //        int stuCount = sc.nextInt();

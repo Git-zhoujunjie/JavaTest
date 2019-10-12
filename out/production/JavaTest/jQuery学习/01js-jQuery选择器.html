@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery选择器</title>
+    <!--引入jQuery文件-->
+    <script src="js/jquery-1.9.1.js" type="text/javascript"></script>
+
+    <!--声明js代码域-->
+    <script type="text/javascript">
+        //id选择器
+        function testId() {
+            var t1 = $("#uname");
+            alert(t1.val());
+        }
+        //标签选择器
+        function testEle() {
+            var eles = $("input");
+            alert(eles.length);
+            alert(eles[0])
+        }
+        //类选择器
+        function testClass() {
+            var clz=$(".common");
+            alert(clz)
+        }
+        //组合选择器
+        function testAll() {
+            var com=$("h3,hr");
+            alert(com.length)
+        }
+        //子选择器
+        function testChild() {
+            var cs=$("#showdiv>input");
+            alert(cs.length)
+        }
+        //层级选择器
+        function testCj() {
+            var inp = $("input:last");
+            alert(inp.val())
+        }
+        //层级选择器2
+        function testCj2() {
+            var inp = $("td:not(td[width])");
+            alert(inp.html())
+        }
+
+        function testCite() {
+            var cite = $("#tcite");
+            alert(cite.html())
+        }
+
+        $(function () {
+            $("#uname").blur(function () {
+                $("#span").html("123456");
+                $("#span").css("color","red");
+            })
+        })
+
+    </script>
+
+    <style type="text/css">
+        .common{}
+    </style>
+</head>
+<body>
+
+    <h3>jquery的选择器</h3>
+    <cite id="tcite" onclick="testCite()">1111</cite>
+    <input type="button" name="" id="" value="测试cite"  onclick="testCite()" class="common"/>
+    <input type="button" name="" id="" value="测试id"  onclick="testId()" class="common"/>
+    <input type="button" name="" id="" value="测试标签选择器"  onclick="testEle()"/>
+    <input type="button" name="" id="" value="测试类选择器"  onclick="testClass()"/>
+    <input type="button" name="" id="" value="测试组合选择器"  onclick="testAll()"/>
+    <hr />
+    用户名: <input type="text" name="uname" id="uname" value="张三" class="common"/><span id="span"></span>
+    <hr />
+    <input type="button" name="" id="" value="测试子选择器" onclick="testChild()" />
+    <input type="button" name="" id="" value="测试层级选择器--first" onclick="testCj()" />
+    <input type="button" name="" id="" value="测试层级选择器--not" onclick="testCj2()" />
+    <hr />
+    <div id="showdiv">
+        <input type="text" name="" id="" value="" />
+        <input type="text" name="" id="" value="" />
+        <input type="text" name="" id="" value="" />
+        <input type="text" name="" id="" value="" />
+    </div>
+    <div id="">
+        <input type="text" name="" id="" value="" />
+        <input type="text" name="" id="" value="" />
+        <input type="text" name="" id="" value="" />
+        <input type="text" name="" id="" value="last" />
+    </div>
+    <table border="1px" height="200px">
+        <tr>
+            <td width="100px"></td>
+            <td width="100px"></td>
+            <td width="100px"></td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+    </table>
+</body>
+</html>

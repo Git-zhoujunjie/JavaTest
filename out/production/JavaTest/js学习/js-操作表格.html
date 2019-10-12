@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js-操作表格</title>
+
+    <!--声明css代码域-->
+    <style type="text/css">
+
+        #a tr{
+            height: 30px;
+            border: solid 1px;
+        }
+
+        #showdiv{
+            width: 800px;
+            height: 500px;
+            margin: auto;
+        }
+
+    </style>
+
+    <!--声明js代码域-->
+    <script type="text/javascript">
+        //删除
+        function del(btn) {
+            //获取table对象，因为要通过table来删除tr
+            var table = document.getElementById("a");
+            //获取要删除的行对象
+            var tr = btn.parentNode.parentNode;
+            //删除
+            table.deleteRow(tr.rowIndex);
+
+
+        }
+        //修改 点击修改按钮后文本框可输入
+        function udp(btn){
+            //获取cell对象，根据按钮对象索引到整个行对象
+            // var cell = document.getElementById("cell1");
+            var tr = btn.parentNode.parentNode;
+            //然后根据行标索引到要修改的单元格
+            var cell = tr.cells[4];
+            //判断多次点击
+            if(!isNaN(cell.innerHTML)){
+                //修改cell的属性
+                cell.innerHTML = "<input type='text' value='"+cell.innerHTML+"' onblur='save(this)'/>";
+            }
+
+        }
+        //cell失去焦点保存
+        function save(text) {
+            //获取cell对象
+            //var cell = document.getElementById("cell1");
+            var cell = text.parentNode;
+            //将text保存
+            cell.innerHTML=text.value;
+        }
+        //全选功能
+        function checkAll() {
+            //获取复选框对象
+            var box = document.getElementsByName("check");
+            if(box[0].checked){
+                for(var i=1;i<box.length;i++){
+                    box[i].checked=true;
+                }
+            }else{
+                for(var i=1;i<box.length;i++){
+                    box[i].checked=false;
+                }
+            }
+        }
+        //选中删除功能
+        function delSel() {
+            //获取复选框对象
+            var box = document.getElementsByName("check");
+            //遍历判断进行删除
+            for (var i=1;i<box.length;i++){
+                if(box[i].checked){
+                    //删除整行
+                    //获取表对象
+                    var table = document.getElementById("a");
+                    //i即为行标
+                    table.deleteRow(i);
+
+                    i--;
+                }
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>js-操作表格</h3>
+    <hr/>
+    <div id="showdiv">
+        <table border="solid 1px" id="a" width="600px" >
+            <tr style="font-weight: bold;text-align: center;">
+                <td style="text-align: left"><input type="checkbox" name="check" value="0" onclick="checkAll()"></td>
+                <td>书名</td>
+                <td>作者</td>
+                <td>价格</td>
+                <td>数量</td>
+                <td>操作</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="check" value="1"></td>
+                <td>java</td>
+                <td>aa</td>
+                <td>22.22</td>
+                <td>2</td>
+                <td style="text-align: center">
+                    <input type="button" value="修改数量" onclick="udp(this)"/>
+                    <input type="button" value="删除" onclick="del(this)"/>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="check" value="2"></td>
+                <td>python</td>
+                <td>pp</td>
+                <td>33.33</td>
+                <td>3</td>
+                <td style="text-align: center">
+                    <input type="button" value="修改数量" onclick="udp(this)"/>
+                    <input type="button" value="删除" onclick="del(this)"/>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="check" value="3"></td>
+                <td>spring</td>
+                <td>ss</td>
+                <td>44.44</td>
+                <td>5</td>
+                <td style="text-align: center">
+                    <input type="button" value="修改数量" onclick="udp(this)"/>
+                    <input type="button" value="删除" onclick="del(this)"/>
+                </td>
+            </tr>
+        </table>
+        <br/>
+        <input type="button" value="选中删除" onclick="delSel() "/>
+    </div>
+</body>
+</html>

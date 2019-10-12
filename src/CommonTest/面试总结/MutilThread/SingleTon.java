@@ -1,4 +1,4 @@
-package CommonTest.面试总结;
+package CommonTest.面试总结.MutilThread;
 
 /**
  * 懒汉式单例模式

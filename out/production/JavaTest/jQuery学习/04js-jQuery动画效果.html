@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery动画效果</title>
+    <script src="js/jquery-1.9.1.js"></script>
+
+    <style type="text/css">
+        img{
+            width: 100%;
+        }
+        #div01{
+            width: 500px;
+            height: 300px;
+            display: none;
+        }
+        #div02{
+            width: 500px;
+            height: 700px;
+            
+        }
+    </style>
+    <script type="text/javascript">
+        function test() {
+            $("#div01").show(3000);
+            $("#div02").hide(3000);
+            $("div").toggle(2000);
+
+            $("#div01").slideDown(2000);
+            //$("#div02").slideUp(2000);
+            $("#div01").fadeOut(3000);
+        }
+
+        //js实现页面加载
+        /*window.onload=function () {
+            test();
+        }*/
+
+        //jquery实现页面加载
+        $(function () {
+            test();
+        })
+    </script>
+</head>
+<body>
+    <h3>jQuery动画效果</h3>
+    <hr/>
+    <div id="div01">
+        <img src="img/贞德.jpg" alt="">
+    </div>
+    <div id="div02">
+        <img src="img/熏.jpg" alt="">
+    </div>
+</body>
+</html>

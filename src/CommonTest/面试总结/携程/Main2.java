@@ -8,7 +8,7 @@ import java.util.Stack;
 /**
  * 豚厂给自研的数据库设计了一套查询表达式，在这个表达式中括号表示将里面的字符串翻转。请你帮助实现这一逻辑
  */
-public class Main {
+public class Main2 {
 
 
 /*请完成下面这个函数，实现题目要求的功能

@@ -1,4 +1,4 @@
-package CommonTest.面试总结;
+package CommonTest.面试总结.MutilThread;
 
 import java.util.concurrent.*;
 
@@ -43,5 +43,6 @@ public class MyThreadPool {
             //关闭线程池
             pool.shutdown();
         }
+
     }
 }

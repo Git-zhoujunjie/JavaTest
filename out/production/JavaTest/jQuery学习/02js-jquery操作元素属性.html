@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery操作元素属性</title>
+    <script src="js/jquery-1.9.1.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        function testField() {
+            var uname = $("#uname");
+            //获取
+            alert(uname.attr("type")+":"+uname.attr("value")+":"+uname.val());
+        }
+        //修改
+        function testUpd() {
+            var uname=$("#uname");
+            uname.attr("type","button");
+            alert(uname.attr("type")+":"+uname.attr("value")+":"+uname.val());
+
+        }
+
+    </script>
+</head>
+<body>
+    <h3>jQuery操作元素属性</h3>
+    <input type="button" value="test" onclick="testField()">
+    <input type="button" value="upd" onclick="testUpd()">
+    <hr/>
+    用户名：<input type="text" value="" id="uname"/>
+</body>
+</html>

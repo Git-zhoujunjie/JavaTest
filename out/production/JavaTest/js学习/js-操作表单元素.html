@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js-操作表单元素</title>
+
+    <script type="text/javascript">
+        function test() {
+            var cb = document.getElementsByName("fav");
+            //alert(cb.length);
+            for(var i=0;i<cb.length;i++){
+                if(cb[i].checked){
+                    alert(cb[i].value);
+                }
+            }
+        }
+
+        function checkAll() {
+            var cb = document.getElementsByName("fav");
+            //alert(cb.length);
+            for(var i=0;i<cb.length;i++){
+                cb[i].checked=true;
+            }
+        }
+
+        function checknot() {
+            var cb = document.getElementsByName("fav");
+            //alert(cb.length);
+            for(var i=0;i<cb.length;i++){
+                cb[i].checked=!cb[i].checked;
+            }
+        }
+
+        function testselect() {
+            var ts = document.getElementById("address");
+            //alert(ts);
+            var options = ts.options;
+            for(var i=0;i<options.length;i++){
+                if(options[i].selected){
+                    alert(options[i].value+':'+options[i].text);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>js-操作表单元素</h3>
+    <input type="button" value="test" onclick="test()">
+    <hr/>
+
+    <input type="checkbox" name="fav" value="1" />fade <br/>
+    <input type="checkbox" name="fav" value="2" />God id a girl <br/>
+    <input type="checkbox" name="fav" value="3" />dream <br/>
+    <input type="checkbox" name="fav" value="4" />Trouble is a friend <br/>
+    <input type="checkbox" name="fav" value="5" />BabyGirl <br/>
+
+    <input type="button" value="全选" onclick="checkAll()">
+    <input type="button" value="反选" onclick="checknot()">
+
+    <hr/>
+    <select name="" id="address" onchange="testselect()">
+        <option value="0">--请选择--</option>
+        <option value="1">北京</option>
+        <option value="2">上海</option>
+        <option value="3">深圳</option>
+    </select>
+</body>
+</html>

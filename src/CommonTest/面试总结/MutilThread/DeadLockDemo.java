@@ -1,5 +1,9 @@
-package CommonTest.面试总结;
+package CommonTest.面试总结.MutilThread;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -32,15 +36,33 @@ class MyResource implements Runnable{
 public class DeadLockDemo {
 
     public static void main(String[] args) {
-        String lock1 = "lock1";
-        String lock2 = "lock2";
-
-        new Thread(new MyResource(lock1,lock2),"ThreadAAA").start();
-        new Thread(new MyResource(lock2,lock1),"ThreadBBB").start();
+//        String lock1 = "lock1";
+//        String lock2 = "lock2";
+//
+//        new Thread(new MyResource(lock1,lock2),"ThreadAAA").start();
+//        new Thread(new MyResource(lock2,lock1),"ThreadBBB").start();
 
         /**
          * Linux  ps -ef|grep xxxx  查看进程命令
          * window中
          */
+
+        int[][] a = {{10,16}, {2,8}, {1,6}, {7,12}};
+//        Arrays.sort(a);
+//        System.out.println(Arrays.toString(a));
+
+        TreeMap<Integer,Integer> map = new TreeMap<>();
+        for(int i=0;i<a.length;i++){
+            map.put(a[i][0],a[i][1]);
+        }
+        for(int i=0;i<a.length;i++){
+            a[i][0] = map.firstKey();
+            a[i][1] = map.get(a[i][0]);
+            map.remove(a[i][0]);
+        }
+        System.out.println(Arrays.toString(a));
     }
+
 }
+
+

@@ -1,4 +1,6 @@
 package CommonTest.面试总结.JDK8;
 
-public interface FunctionInterface {
+@FunctionalInterface
+public interface FunctionInterface<T> {
+    int Steratage(T a,T b);
 }

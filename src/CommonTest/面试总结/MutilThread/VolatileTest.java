@@ -1,4 +1,4 @@
-package CommonTest.面试总结;
+package CommonTest.面试总结.MutilThread;
 
 import org.junit.Test;
 

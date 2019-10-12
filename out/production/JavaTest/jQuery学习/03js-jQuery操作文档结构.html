@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery操作文档结构</title>
+    <script src="js/jquery-1.9.1.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        //内部插入
+        function testAppend(){
+            //获取元素对象
+            var div=$("#showdiv");
+            //使用内部插入
+            div.append("<i>，饭</i>");
+        }
+
+        function testAppendTo(){
+            //获取元素对象
+            var div=$("#showdiv");
+            //使用appendTo()
+            $("#u1").appendTo(div);
+        }
+
+        function testPrepend(){
+            //获取元素对象
+            var div=$("#showdiv");
+            //使用prepend()
+            div.prepend("<i>你好，</i>");
+        }
+        //外部插入
+        function testAfter(){
+            //获取元素对象
+            var div=$("#showdiv");
+            //使用after外部插入
+            div.after("<b>今天天气不错，适合学习</b>");
+
+        }
+        function testBefore(){
+            //获取元素对象
+            var div=$("#showdiv");
+            //使用before外部插入
+            div.before("<b>今天天气不错，适合学习</b>")
+
+        }
+        function testEmpty(){
+            $("#showdiv").empty()
+        }
+    </script>
+
+    <style type="text/css">
+        #showdiv{
+            width: 300px;
+            height: 300px;
+            border: solid 3px orange;
+        }
+    </style>
+</head>
+<body>
+    <h3>jQuery操作文档结构</h3>
+    <hr/>
+    <input type="button" name="" id="" value="测试append" onclick="testAppend()" />
+    <input type="button" name="" id="" value="测试appenTo" onclick="testAppendTo()" />
+    <input type="button" name="" id="" value="测试prepend" onclick="testPrepend()" />
+    <hr />
+    <input type="button" name="" id="" value="测试after" onclick="testAfter()" />
+    <input type="button" name="" id="" value="测试before" onclick="testBefore()" />
+    <input type="button" name="" id="" value="测试删除--empty()" onclick="testEmpty()" />
+    <hr />
+    <u id="u1">每天下午都是充斥着面包浓浓的香味</u>
+    <div id="showdiv">
+        <b>今天中午吃什么</b>
+    </div>
+</body>
+</html>

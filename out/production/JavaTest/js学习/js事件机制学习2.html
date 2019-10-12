@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js事件机制学习2</title>
+
+    <script type="text/javascript">
+        //值改变事件
+        function testOnchange(){
+            alert("我被改变了");
+        }
+        //单击事件
+        function testOnclick(){
+            alert("今天天气真好，不冷不热，贼适合学习");
+        }
+        //双击事件
+        function testOndblclick(){
+            alert("老师说的对");
+        }
+        //事件的阻断
+        function testA(){
+            alert("事件的阻断");
+            return false;
+        }
+        //超链接调用js函数
+        function testHref(){
+            alert("我是超链接调用");
+        }
+    </script>
+</head>
+<body>
+    <h3>js的事件机制二</h3>
+    <hr />
+    值改变事件: <input type="text" name="" id="" value="" onchange="testOnchange();"/>
+    <br /><br />
+    <select name="" id="" onchange="testOnchange();">
+        <option value="">北京</option>
+        <option value="">上海</option>
+        <option value="">广州</option>
+    </select>
+    <hr />
+    事件的冲突：<br />
+    <input type="button" name="" id="" value="事件的冲突" onclick="testOnclick()" ondblclick="testOndblclick()"/>
+    <hr />
+    事件的阻断：<br />
+    <a href="http://www.baidu.com" target="_blank" onclick="return testA()">百度一下</a>
+    <hr />
+    超链接调用js函数:
+    <a href="javascript:testHref()">调用js函数</a>
+</body>
+</html>

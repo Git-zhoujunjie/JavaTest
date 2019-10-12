@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js类和对象</title>
+
+    <script type="text/javascript">
+        function Person(name,age) {
+
+            this.name = name;
+            this.age = age;
+            this.test=function (a) {
+                alert(a);
+                //return "class";
+            }
+        }
+
+        function User(id,fav) {
+            this.id=id;
+            this.fav=fav;
+        }
+        Person.prototype = new User();
+        User.prototype.testU=function () {
+            alert("testU");
+        }
+        var t1 = new Person("张三",32);
+        var t2 = new Person("李四",22);
+        //alert(t1.prototype.fav);
+        alert(t1.fav===t2.fav);
+        //alert(t1.name);
+        //alert(t1.test("6666"));
+
+        function f() {
+            var ajax;
+            if(window.XMLHttpRequest){
+                ajax=new XMLHttpRequest();
+            }else{
+                ajax=new ActiveXObject();
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

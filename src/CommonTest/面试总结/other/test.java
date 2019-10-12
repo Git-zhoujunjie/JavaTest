@@ -1,4 +1,4 @@
-package CommonTest.面试总结;
+package CommonTest.面试总结.other;
 
 public class test {
     public static void main(String[] args) {

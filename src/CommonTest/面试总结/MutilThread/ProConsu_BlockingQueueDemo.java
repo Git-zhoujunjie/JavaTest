@@ -1,4 +1,4 @@
-package CommonTest.面试总结;
+package CommonTest.面试总结.MutilThread;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
@@ -17,7 +17,7 @@ class MyShare{  //资源类
 
     private AtomicInteger atomicInteger = new AtomicInteger();
     //为了代码的复用性，这里阻塞队列通过构造方法传入
-    private BlockingQueue<String> queue = null;
+    private BlockingQueue<String> queue;
 
     public MyShare(BlockingQueue<String> queue){
         this.queue = queue;
@@ -27,7 +27,7 @@ class MyShare{  //资源类
 
     public void produce() throws Exception{
         //生产
-        String data = null;
+        String data;
         boolean resValue;
         while (FLAG){
             data = atomicInteger.incrementAndGet()+"";

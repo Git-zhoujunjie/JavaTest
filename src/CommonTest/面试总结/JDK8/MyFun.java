@@ -1,4 +1,7 @@
 package CommonTest.面试总结.JDK8;
 
-public interface MyFun {
+@FunctionalInterface
+public interface MyFun<T> {
+    double getValue(T val);
 }
+

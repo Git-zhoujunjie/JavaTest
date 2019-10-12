@@ -1,4 +1,4 @@
-package CommonTest.面试总结;
+package CommonTest.面试总结.MutilThread;
 
 import java.util.HashMap;
 import java.util.Map;
